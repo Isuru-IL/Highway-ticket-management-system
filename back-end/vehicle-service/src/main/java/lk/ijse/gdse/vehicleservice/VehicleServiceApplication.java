@@ -1,4 +1,4 @@
-package lk.ijse.gdse.userservice;
+package lk.ijse.gdse.vehicleservice;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
@@ -10,10 +10,10 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class UserServiceApplication {
+public class VehicleServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(UserServiceApplication.class, args);
+        SpringApplication.run(VehicleServiceApplication.class, args);
     }
 
     @Bean
@@ -26,4 +26,5 @@ public class UserServiceApplication {
     public RestTemplate restTemplate(){
         return new RestTemplate();
     }
+
 }
