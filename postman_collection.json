@@ -1,0 +1,721 @@
+{
+	"info": {
+		"_postman_id": "0013a174-5b9f-4619-804a-82c1b4a61946",
+		"name": "AD2-Coursework",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31374269",
+		"_collection_link": "https://www.postman.com/material-physicist-52126251/workspace/gdse66/collection/31374269-0013a174-5b9f-4619-804a-82c1b4a61946?action=share&source=collection_link&creator=31374269"
+	},
+	"item": [
+		{
+			"name": "user-service",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/getAllUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"getAllUsers"
+							]
+						}
+					},
+					"response": [
+						{
+							"userName": "Isuru2",
+							"email": "Isuru2@gmail.com",
+							"password": "1234"
+						},
+						{
+							"userName": "Isuru3",
+							"email": "Isuru3@gmail.com",
+							"password": "1234"
+						},
+						{
+							"userName": "IsuruLak",
+							"email": "IsuruLak@gmail.com",
+							"password": "1234"
+						}
+					]
+				},
+				{
+					"name": "Save User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"Isuru4\",\r\n    \"email\": \"Isuru3@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"save"
+							]
+						}
+					},
+					"response": [
+						{
+							"userName": "Isuru4",
+							"email": "Isuru3@gmail.com",
+							"password": "1234"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"Isuru2\",\r\n    \"email\": \"Isuru2@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"userName": "Isuru2",
+							"email": "Isuru2@gmail.com",
+							"password": "1234"
+						}
+					]
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/delete?userName=isuru4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "isuru4"
+								}
+							]
+						}
+					},
+					"response": [true]
+				},
+				{
+					"name": "SearchByUserName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/searchByUserName?userName=isuruLak",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"searchByUserName"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "isuruLak"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"userName": "isuruLak",
+							"email": "IsuruLak@gmail.com",
+							"password": "1234"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "vehicle-service",
+			"item": [
+				{
+					"name": "Get All Vehicles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/vehicle/getAllVehicles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"vehicle",
+								"getAllVehicles"
+							]
+						}
+					},
+					"response": [
+						{
+							"vehicleId": "V-0001",
+							"userName": "IsuruLak",
+							"type": "Car",
+							"brand": "BMW",
+							"engineCapacity": "2500cc"
+						},
+						{
+							"vehicleId": "V-0002",
+							"userName": "IsuruLak",
+							"type": "Van",
+							"brand": "BMW2",
+							"engineCapacity": "1500cc"
+						},
+						{
+							"vehicleId": "V-0003",
+							"userName": "Isuru2",
+							"type": "Car",
+							"brand": "BMW",
+							"engineCapacity": "2500cc"
+						}
+					]
+				},
+				{
+					"name": "Save Vehicle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vehicleId\":\"V-0004\",\r\n    \"userName\": \"Isuru3\",\r\n    \"type\":\"Car\",\r\n    \"brand\":\"BMW\",\r\n    \"engineCapacity\":\"2500\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/vehicle/saveVehicle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"vehicle",
+								"saveVehicle"
+							]
+						}
+					},
+					"response": [
+						{
+							"vehicleId": "V-0004",
+							"userName": "Isuru3",
+							"type": "Car",
+							"brand": "BMW",
+							"engineCapacity": "2500"
+						}
+					]
+				},
+				{
+					"name": "Update Vehicle",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vehicleId\":\"V-0004\",\r\n    \"userName\": \"IsuruLak\",\r\n    \"type\":\"Van\",\r\n    \"brand\":\"BMW2\",\r\n    \"engineCapacity\":\"1500\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/vehicle/updateVehicle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"vehicle",
+								"updateVehicle"
+							]
+						}
+					},
+					"response": [
+						{
+							"vehicleId": "V-0004",
+							"userName": "IsuruLak",
+							"type": "Van",
+							"brand": "BMW2",
+							"engineCapacity": "1500"
+						}
+					]
+				},
+				{
+					"name": "Delete Vehicle",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/vehicle/deleteVehicle?vehicleId=V-0004",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"vehicle",
+								"deleteVehicle"
+							],
+							"query": [
+								{
+									"key": "vehicleId",
+									"value": "V-0004"
+								}
+							]
+						}
+					},
+					"response": [true]
+				},
+				{
+					"name": "SearchByVehiId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/vehicle/searchByVehicleId?vehicleId=V-0001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"vehicle",
+								"searchByVehicleId"
+							],
+							"query": [
+								{
+									"key": "vehicleId",
+									"value": "V-0001"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"vehicleId": "V-0001",
+							"userName": "IsuruLak",
+							"type": "Car",
+							"brand": "BMW",
+							"engineCapacity": "2500cc"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ticket-service",
+			"item": [
+				{
+					"name": "Get All Ticket",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ticket/getAllTickets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ticket",
+								"getAllTickets"
+							]
+						}
+					},
+					"response": [
+						{
+							"ticketId": "T-0001",
+							"user": "isuruLak",
+							"vehicle": "V-0001",
+							"date": "2024-07-01",
+							"time": "11:25",
+							"amount": "2000.0",
+							"entryPoint": "Galle",
+							"exitPoint": "Matara",
+							"status": "PAID"
+						},
+						{
+							"ticketId": "T-0002",
+							"user": "isuruLak",
+							"vehicle": "V-0001",
+							"date": "2024-07-01",
+							"time": "11:25",
+							"amount": "3000.0",
+							"entryPoint": "Galle2",
+							"exitPoint": "Matara2",
+							"status": "PAID"
+						},
+						{
+							"ticketId": "T-0003",
+							"user": "isuruLak",
+							"vehicle": "V-0001",
+							"date": "2024-07-01",
+							"time": "11:25",
+							"amount": "2000.0",
+							"entryPoint": "Galle",
+							"exitPoint": "Matara",
+							"status": "PAID"
+						},
+						{
+							"ticketId": "T-0004",
+							"user": "isuruLak",
+							"vehicle": "V-0001",
+							"date": "2024-07-01",
+							"time": "11:25",
+							"amount": "2000.0",
+							"entryPoint": "Galle",
+							"exitPoint": "Matara",
+							"status": "PAID"
+						},
+						{
+							"ticketId": "T-0005",
+							"user": "isuruLak",
+							"vehicle": "V-0001",
+							"date": "2024-07-01",
+							"time": "11:25",
+							"amount": "2000.0",
+							"entryPoint": "Galle",
+							"exitPoint": "Matara",
+							"status": "PAID"
+						},
+						{
+							"ticketId": "T-0006",
+							"user": "isuruLak",
+							"vehicle": "V-0001",
+							"date": "2024-07-01",
+							"time": "11:25",
+							"amount": "2000.0",
+							"entryPoint": "Galle",
+							"exitPoint": "Matara",
+							"status": "CREATED"
+						},
+						{
+							"ticketId": "T-0008",
+							"user": "isuruLak",
+							"vehicle": "V-0001",
+							"date": "2024-07-01",
+							"time": "11:25",
+							"amount": "2000.0",
+							"entryPoint": "Galle",
+							"exitPoint": "Matara",
+							"status": "CREATED"
+						}
+					]
+				},
+				{
+					"name": "Save Ticket",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ticketId\":\"T-0006\",\r\n    \"user\":\"isuruLak\",\r\n    \"vehicle\":\"V-0001\",\r\n    \"date\":\"2024-07-01\",\r\n    \"time\":\"11:25\",\r\n    \"amount\":\"2000\",\r\n    \"entryPoint\":\"Galle\",\r\n    \"exitPoint\":\"Matara\",\r\n\t\t\"status\":\"CREATED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ticket/saveTicket",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ticket",
+								"saveTicket"
+							]
+						}
+					},
+					"response": [
+						{
+							"ticketId": "T-0006",
+							"user": "isuruLak",
+							"vehicle": "V-0001",
+							"date": "2024-07-01",
+							"time": "11:25",
+							"amount": "2000.0",
+							"entryPoint": "Galle",
+							"exitPoint": "Matara",
+							"status": "CREATED"
+						}
+					]
+				},
+				{
+					"name": "SearchByTicketId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ticket/searchByTicketId?ticketId=T-0003",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ticket",
+								"searchByTicketId"
+							],
+							"query": [
+								{
+									"key": "ticketId",
+									"value": "T-0003"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"ticketId": "T-0003",
+							"user": "isuruLak",
+							"vehicle": "V-0001",
+							"date": "2024-07-01",
+							"time": "11:25",
+							"amount": "2000.0",
+							"entryPoint": "Galle",
+							"exitPoint": "Matara",
+							"status": "PAID"
+						}
+					]
+				},
+				{
+					"name": "Update Ticket",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ticketId\":\"T-0001\",\r\n    \"user\":\"isuruLak\",\r\n    \"vehicle\":\"V-0001\",\r\n    \"date\":\"2024-07-01\",\r\n    \"time\":\"11:25\",\r\n    \"amount\":\"2000\",\r\n    \"entryPoint\":\"Galle\",\r\n    \"exitPoint\":\"Matara\",\r\n\t\t\"status\":\"CREATED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ticket/updateTicket",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ticket",
+								"updateTicket"
+							]
+						}
+					},
+					"response": [
+						{
+							"ticketId": "T-0001",
+							"user": "isuruLak",
+							"vehicle": "V-0001",
+							"date": "2024-07-01",
+							"time": "11:25",
+							"amount": "2000.0",
+							"entryPoint": "Galle",
+							"exitPoint": "Matara",
+							"status": "CREATED"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "payment-service",
+			"item": [
+				{
+					"name": "Get All Payment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/payment/getAllPayments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								"getAllPayments"
+							]
+						}
+					},
+					"response": [
+						{
+							"paymentId": "P-0001",
+							"ticket": "T-0001",
+							"paymentMethod": "CASH",
+							"paymentTime": "01:20",
+							"amount": "2000.0"
+						},
+						{
+							"paymentId": "P-0002",
+							"ticket": "T-0002",
+							"paymentMethod": "CASH",
+							"paymentTime": "01:20",
+							"amount": "2000.0"
+						},
+						{
+							"paymentId": "P-0003",
+							"ticket": "T-0003",
+							"paymentMethod": "CASH",
+							"paymentTime": "01:20",
+							"amount": "2000.0"
+						},
+						{
+							"paymentId": "P-0004",
+							"ticket": "T-0004",
+							"paymentMethod": "CARD",
+							"paymentTime": "01:20",
+							"amount": "2000.0"
+						},
+						{
+							"paymentId": "P-0005",
+							"ticket": "T-0005",
+							"paymentMethod": "CARD",
+							"paymentTime": "02:20",
+							"amount": "2000.0"
+						},
+						{
+							"paymentId": "P-0006",
+							"ticket": "T-0006",
+							"paymentMethod": "CARD",
+							"paymentTime": "02:20",
+							"amount": "2000.0"
+						}
+					]
+				},
+				{
+					"name": "Place Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paymentId\":\"P-0006\",\r\n    \"ticket\":\"T-0006\",\r\n    \"paymentMethod\":\"CARD\",\r\n    \"paymentTime\":\"02:20\",\r\n    \"amount\":\"2000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/payment/placePayment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								"placePayment"
+							]
+						}
+					},
+					"response": [
+						{
+							"paymentId": "P-0006",
+							"ticket": "T-0006",
+							"paymentMethod": "CARD",
+							"paymentTime": "02:20",
+							"amount": "2000.0"
+						}
+					]
+				}
+			]
+		}
+	]
+}
