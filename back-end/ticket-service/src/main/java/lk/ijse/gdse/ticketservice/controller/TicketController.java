@@ -1,5 +1,6 @@
 package lk.ijse.gdse.ticketservice.controller;
 
+import jakarta.validation.Valid;
 import lk.ijse.gdse.ticketservice.dto.TicketDTO;
 import lk.ijse.gdse.ticketservice.service.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +15,13 @@ public class TicketController {
     private TicketService ticketService;
 
     @PostMapping("/saveTicket")
-    public TicketDTO saveTicket(@RequestBody TicketDTO ticketDTO){
+    public TicketDTO saveTicket(@Valid @RequestBody TicketDTO ticketDTO){
         System.out.println("TicketDTO = "+ticketDTO);
         return ticketService.saveTicket(ticketDTO);
     }
 
     @PostMapping("/updateTicket")
-    public TicketDTO updateTicket(@RequestBody TicketDTO ticketDTO){
+    public TicketDTO updateTicket(@Valid @RequestBody TicketDTO ticketDTO){
         return ticketService.updateTicket(ticketDTO);
     }
 

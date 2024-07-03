@@ -1,5 +1,6 @@
 package lk.ijse.gdse.paymentservice.controller;
 
+import jakarta.validation.Valid;
 import lk.ijse.gdse.paymentservice.dto.PaymentDTO;
 import lk.ijse.gdse.paymentservice.service.PaymentService;
 import lk.ijse.gdse.paymentservice.service.exception.DuplicateRecordException;
@@ -16,7 +17,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping("/placePayment")
-    public PaymentDTO placePayment(@RequestBody PaymentDTO paymentDTO){
+    public PaymentDTO placePayment(@Valid @RequestBody PaymentDTO paymentDTO){
         System.out.println("PaymentDTO = "+paymentDTO);
         return paymentService.placePayment(paymentDTO);
     }

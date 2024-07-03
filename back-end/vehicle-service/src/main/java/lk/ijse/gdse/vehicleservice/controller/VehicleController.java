@@ -1,5 +1,6 @@
 package lk.ijse.gdse.vehicleservice.controller;
 
+import jakarta.validation.Valid;
 import lk.ijse.gdse.vehicleservice.dto.VehicleDTO;
 import lk.ijse.gdse.vehicleservice.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +20,13 @@ public class VehicleController {
     }
 
     @PostMapping("/saveVehicle")
-    public VehicleDTO saveVehicle(@RequestBody VehicleDTO vehicleDTO){
+    public VehicleDTO saveVehicle(@Valid @RequestBody VehicleDTO vehicleDTO){
         System.out.println("VehicleDTO = "+vehicleDTO);
         return vehicleService.saveVehicle(vehicleDTO);
     }
 
     @PatchMapping("/updateVehicle")
-    public VehicleDTO updateVehicle(@RequestBody VehicleDTO vehicleDTO){
+    public VehicleDTO updateVehicle(@Valid @RequestBody VehicleDTO vehicleDTO){
         return vehicleService.updateVehicle(vehicleDTO);
     }
 
